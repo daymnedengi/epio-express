@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title><%= article.title %></title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="<%= article.description %>">
+        <meta name="keywords" content="<%= article.keywords %>">
+        <meta name="robots" content="all">
+        <link rel="stylesheet" href="/css/shared.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/nav-menu.css">
+        <link rel="stylesheet" href="/css/article.css">
+        <link rel="stylesheet" href="/css/footer.css">
+    </head>
+    <body>
+        <%- include("./header.ejs") %>
+        <%- include("./nav-menu.ejs") %>
+
+        <main>
+            <article class="article__container"> 
+                <header>
+                    <div class="article__image">
+                        <img src="<%= article.image %>" alt="<%= article.title %>">
+                    </div>
+                    <h1 class="article__title"><%= article.title %></h1>
+                    <div class="article__info">
+                        <div>
+                            <img src="/img/views.png" alt="<%= article.title %>"> <%= article.views %>
+                        </div>
+                        <div>
+                            <img src="/img/calendar.png" alt="<%= article.title %>"> <%= article.createdAt %>
+                        </div>
+                    </div>
+                </header>
+                <div class="article__content">
+                    <%- article.content %>
+                </div>
+            </article>
+        </main>
+
+        <%- include("./footer.ejs") %>
+    </body>
+</html>

@@ -1,0 +1,195 @@
+.editor
+{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    margin-top: 50px;
+}
+
+.editor__container
+{
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.editor__form
+{
+    width: 100%;
+    height: auto;
+    margin-top: 25px;
+}
+
+.editor__form-group
+{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+.editor__form_label
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    font-size: 16px;
+}
+
+.editor__form_text,
+.editor__form_select,
+.editor__form_textarea
+{
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    padding: 0px 15px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 15px;
+}
+
+.editor__form_file
+{
+    display: block;
+    margin-top: 5px;
+}
+
+.editor__form_selected-image
+{
+    width: 100%;
+    margin-top: 15px;
+    height: auto;
+}
+
+.editor__form_selected-image > img
+{
+    width: 100%;
+    height: auto;
+}
+
+.editor__form_textarea
+{
+    height: 600px;
+    padding: 25px;
+    resize: none;
+}
+
+.editor__form_textarea#editor__description_textarea
+{
+    height: 120px;
+}
+
+.editor__form_textarea#editor__content_textarea
+{
+    line-height: 25px;
+}
+
+.editor__exec_commands
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.editor__exec_commands > button
+{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.editor__exec_commands > button > img
+{
+    width: auto;
+    height: 100%;
+}
+
+.editor__form_button
+{
+    width: 120px;
+    height: 35px;
+    margin: 5px;
+    background-color: white;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.dialog
+{
+    width: 400px;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.dialog#select-image__dialog
+{
+    height: 115px;
+}
+
+.dialog__row
+{
+    width: 100%;
+    height: auto;
+}
+
+.dialog__row > label
+{
+    display: block;
+}
+
+.dialog__row > input[type="text"]
+{
+    width: 100%;
+    height: 30px;
+    margin-top: 15px;
+    padding: 0px 15px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.dialog__row:last-child
+{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+.dialog__row > input[type="button"]
+{
+    width: 120px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 850px)
+{
+    .editor__container
+    {
+        width: 100%;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+}

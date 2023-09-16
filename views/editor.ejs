@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/css/shared.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/nav-menu.css">
+        <link rel="stylesheet" href="/css/editor.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <title>Редактор</title>
+    </head>
+    <body>
+        <%- include("./header.ejs") %>
+        <%- include("./nav-menu.ejs") %>
+
+        <div class="editor">
+            <div class="editor__container">
+                <h2>Редактор</h2>
+                <div class="editor__form">
+                    <div class="editor__form-group">
+                        <label class="editor__form_label">Заголовок:</label>
+                        <input type="text" id="editor__title_text" class="editor__form_text" maxlength="128">
+                    </div>
+                    <div class="editor__form-group">
+                        <label class="editor__form_label">Описание:</label>
+                        <textarea id="editor__description_textarea" class="editor__form_textarea" maxlength="256"></textarea>
+                    </div>
+                    <div class="editor__form-group">
+                        <label class="editor__form_label">Ключевые слова:</label>
+                        <input type="text" id="editor__keywords_text" class="editor__form_text" maxlength="128">
+                    </div>
+                    <div class="editor__form-group">
+                        <label class="editor__form_label">Категория:</label>
+                        <select id="editor__category_select" class="editor__form_select">
+                            <option value="news" selected>Новости</option>
+                            <option value="articles">Статьи</option>
+                            <option value="reviews">Обзоры</option>
+                            <option value="humor">Юмор</option>
+                            <option value="files">Файлы</option>
+                        </select>
+                    </div>
+                    <div class="editor__form-group">
+                        <label class="editor__form_label">Статус:</label>
+                        <select id="editor__status_select" class="editor__form_select">
+                            <option value="edit" selected>Редактирование</option>
+                            <option value="ok">Ок</option>
+                        </select>
+                    </div>
+                    <div class="editor__form-group">
+                        <label class="editor__form_label">Изображение:</label>
+                        <input id="editor__image_file" type="file" accept="image/*" class="editor__form_file">
+                        <div class="editor__form_selected-image">
+                            <img id="editor__selected_image" src="" alt="">
+                        </div>
+                    </div>
+                    <div class="editor__form-group">
+                        <label class="editor__form_label">Содержание:</label>
+                        <div class="editor__exec_commands">
+                            <button id="editor__exec_h2">
+                                <img title="Большой заголовок" src="/img/header2.png">
+                            </button>
+                            <button id="editor__exec_h3">
+                                <img title="Средний заголовок" src="/img/header3.png">
+                            </button>
+                            <button id="editor__exec_bold">
+                                <img title="Жирный шрифт" src="/img/bold.png">
+                            </button>
+                            <button id="editor__exec_underline">
+                                <img title="Подчеркнутый шрифт" src="/img/underline.png">
+                            </button>
+                            <button id="editor__exec_link">
+                                <img title="Вставить ссылку" src="/img/link.png">
+                            </button>
+                            <button id="editor__exec_image">
+                                <img title="Вставить изображение" src="/img/image.png">
+                            </button>
+                        </div>
+                        <textarea id="editor__content_textarea" class="editor__form_textarea"></textarea>
+                    </div>
+                    <div class="editor__form-group">
+                        <input type="button" id="editor__save_button" class="editor__form_button" value="Сохранить">
+                        <input type="button" id="editor__cancel_button" class="editor__form_button" value="Отмена">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <dialog id="select-image__dialog" class="dialog">
+            <div class="dialog__row">
+                <input type="file" id="select-image__file" accept="image/*">
+            </div>
+            <div class="dialog__row">
+                <input type="button" id="select-image__dialog_accept" value="Выбрать">
+                <input type="button" id="select-image__dialog_close" value="Отмена">
+            </div>
+        </dialog>
+
+        <script src="/js/editor.js"></script>
+
+        <%- include("./footer.ejs") %>
+    </body>
+</html>

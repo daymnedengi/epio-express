@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/css/shared.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/nav-menu.css">
+        <link rel="stylesheet" href="/css/not-found.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <title>Ресур не найден</title>
+    </head>
+    <body>
+        <%- include("./header.ejs") %>
+        <%- include("./nav-menu.ejs") %>
+
+        <div class="not-found">
+            <div class="not-found__container">
+                <div class="not-found__title">
+                    Ошибка 404
+                </div>
+                <div class="not-found__description">
+                    Ресурс <span><%=locals.url %></span> не найден или доступ к нему ограничен.<br />
+                    <a href="/">Вернуться на главную</a>
+                </div>
+            </div>
+        </div>
+
+        <%- include("./footer.ejs") %>
+    </body>
+</html>

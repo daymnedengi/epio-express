@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Epio.site - развлекательный портал</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Epio.site - это игры, фильмы, новости, обзоры, юмор, файлы, подборки.">
+        <meta name="keywords" content="Epio.site, epio, игры, фильмы, новости, обзоры, юмор, файлы, подборки.">
+        <meta name="robots" content="all">
+        <link rel="stylesheet" href="/css/shared.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/nav-menu.css">
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/footer.css">
+    </head>
+    <body>
+        <%- include("./header.ejs") %>
+        <%- include("./nav-menu.ejs") %>
+
+        <main class="content">
+            <div class="content__container">
+                <section>
+                    <h1><%= locals.title %></h1>
+                    <div class="articles">
+                        <% if (locals.articles) { %>
+                            <% for (let i = 0, l = articles.length; i < l; i++) { %>
+                                <%- include("./article-item.ejs", { article: articles[i] }); %>
+                            <% } %>
+                        <% } else { %>
+                            <div style="font-size: 18px;">Тут пусто...</div>
+                        <% } %>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <%- include("./footer.ejs") %>
+    </body>
+</html>

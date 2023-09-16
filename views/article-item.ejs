@@ -1,0 +1,26 @@
+<article class="article-item">
+    <header>
+        <div class="article-item__category">
+            <a href="<%= article.category.link %>"><%= article.category.title %></a>
+        </div>
+        <div class="article-item__image">
+            <img src="<%= article.image %>" alt="<%= article.title %>">
+        </div>
+        <div class="article-item__title">
+            <h2>
+                <a href="/article?id=<%= article.id %>"><%= article.title %></a>
+            </h2>
+        </div>
+    </header>
+    <p class="article-item__content">
+        <%- article.description %>
+    </p>
+    <footer class="article-item__footer">
+        <span>
+            <img src="/img/views.png" alt="<%= article.title %>"> <%= article.views %>
+        </span>
+        <span>
+            <img src="/img/calendar.png" alt="<%= article.title %>"> <%= article.createdAt %>
+        </span>
+    </footer>
+</article>
